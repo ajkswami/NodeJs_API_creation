@@ -1,0 +1,50 @@
+const express = require('express')
+
+const prof = express()
+
+let json = {
+  "prof_employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com",
+      "company": "TechM",
+      "phone": "7416618834",
+      "salary": "70000",
+      "desgination": "SDET",
+      "location": "Hyderabad"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com",
+      "company": "Capgemini",
+      "phone": "9116618834",
+      "salary": "100000",
+      "desgination": "Full Stack Developer",
+      "location": "Chennai"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com",
+      "company": "Google",
+      "phone": "8416618834",
+      "salary": "60000",
+      "desgination": "QA",
+      "location": "Bangalore"
+    }
+  ]
+}
+
+
+prof.get('/api',(request, response, next)=>{
+    return response.json(json)
+})
+
+prof.listen(3000,()=>{
+    console.log('listening on port 3000')
+})
